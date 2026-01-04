@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Jagacodes-platform-engineering-labs/platform-apps.git
+    targetRevision: HEAD
+    path: bootstrap/apps/sample-backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
