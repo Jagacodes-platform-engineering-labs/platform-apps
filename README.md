@@ -13,3 +13,26 @@ This repository represents the desired state of all applications and environment
 
 ## Key Pattern
 - App-of-Apps for scalability and governance
+
+## Sample App Set Up
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/<YOUR_ORG>/platform-apps.git
+    targetRevision: main
+    path: apps/sample-backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+```
