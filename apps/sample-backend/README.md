@@ -1,4 +1,3 @@
-```md
 # Platform Applications (GitOps)
 
 This directory contains Kubernetes manifests representing the desired state of all applications deployed via the platform.
@@ -98,6 +97,15 @@ Application developers typically interact with the platform via:
 - Templates
 
 - Self-service workflows
+
+## Verification
+
+The application is deployed via ArgoCD and verified using:
+- Kubernetes service DNS resolution
+- Port-forwarding for local access
+- Ingress-based external access (Minikube)
+
+This confirms end-to-end GitOps delivery and runtime health.
 
 
 
