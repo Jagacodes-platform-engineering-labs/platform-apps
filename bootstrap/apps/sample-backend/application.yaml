@@ -11,7 +11,7 @@ spec:
     path: bootstrap/apps/sample-backend
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: apps
   syncPolicy:
     automated:
       prune: true
