@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/Jagacodes-platform-engineering-labs/platform-apps.git'
+    path: bootstrap/apps
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
