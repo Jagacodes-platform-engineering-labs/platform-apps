@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Jagacodes-platform-engineering-labs/platform-apps.git
+    repoURL: 'https://github.com/Jagacodes-platform-engineering-labs/platform-apps.git'
     targetRevision: HEAD
     path: bootstrap/apps/sample-backend
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: apps
   syncPolicy:
     automated:
