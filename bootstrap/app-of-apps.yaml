@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: apps-root
   namespace: argocd
+  labels:
+    name: apps-root
 spec:
   project: default
   source:
